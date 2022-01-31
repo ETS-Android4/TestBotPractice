@@ -28,10 +28,24 @@ public class TankDrive extends OpMode {
 
     @Override
     public void loop() {
-    motorFrontLeft.setPower(-gamepad1.left_stick_y);
-    motorBackLeft.setPower(-gamepad1.left_stick_y);
-    motorFrontRight.setPower(-gamepad1.right_stick_y);
-    motorBackRight.setPower(-gamepad1.right_stick_y);
+        motorFrontLeft.setPower(gamepad1.left_stick_y);
+        motorBackLeft.setPower(gamepad1.left_stick_y);
+        motorFrontRight.setPower(gamepad1.right_stick_y);
+        motorBackRight.setPower(gamepad1.right_stick_y);
+
+
+            motorFrontLeft.setPower(gamepad1.left_trigger);
+            motorBackLeft.setPower(-gamepad1.left_trigger);
+            motorFrontRight.setPower(-gamepad1.left_trigger);
+            motorBackRight.setPower(gamepad1.left_trigger);
+
+
+            motorFrontLeft.setPower(-gamepad1.right_trigger);
+            motorBackLeft.setPower(gamepad1.right_trigger);
+            motorFrontRight.setPower(gamepad1.right_trigger);
+            motorBackRight.setPower(-gamepad1.right_trigger);
+
     }
+
 }
 
